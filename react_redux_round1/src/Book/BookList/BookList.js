@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Book from '../Book/Book';
+import { addNewBookStart } from '../BookActions';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class BookList extends React.Component {
   };
   onSaveButtonClicked = () => {
     this.setState({ isAdding: false });
+    let book1 = { bookName: this.state.newBookName };
+    let book2 = { bookName: 'BOOK2' };
+    this.props.addNewBookStart(book1);
   };
   onNewBookNameChanged = event => {
     console.log(`event.target.value:`, event.target.value);
@@ -48,7 +52,9 @@ class BookList extends React.Component {
 const mapStateToProps = store => {
   return {};
 };
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  addNewBookStart
+};
 
 export default connect(
   mapStateToProps,
