@@ -16,7 +16,7 @@ class BookPage extends React.Component {
       <div>
         <div>BookPage</div>
         <div>
-          <BookList bookName="book1" />
+          <BookList aaa="xxx" />
         </div>
       </div>
     );

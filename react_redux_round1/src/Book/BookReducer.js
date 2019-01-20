@@ -1,8 +1,6 @@
 import * as BookActionTypes from './BookActionTypes';
 
-const initialState = {
-  Books: []
-};
+const initialState = [];
 
 export default function Book(state = initialState, action) {
   switch (action.type) {
@@ -13,10 +11,7 @@ export default function Book(state = initialState, action) {
     }
 
     case BookActionTypes.GET_ALL_BOOKS_SUCCESS: {
-      return {
-        ...state,
-        Books: action.payload
-      };
+      return action.payload;
     }
 
     case BookActionTypes.GET_ALL_BOOKS_FAILURE: {
@@ -27,10 +22,7 @@ export default function Book(state = initialState, action) {
     }
 
     case BookActionTypes.ADD_NEW_BOOK_SUCCESS: {
-      return {
-        ...state,
-        Books: [...state.Books, action.payload]
-      };
+      return [...state, action.payload];
     }
 
     case BookActionTypes.ADD_NEW_BOOK_FAILURE: {
@@ -53,17 +45,14 @@ export default function Book(state = initialState, action) {
       };
     }
     case BookActionTypes.UPDATE_BOOK_SUCCESS: {
-      const Books = state.Books.map(item => {
+      const Books = state.map(item => {
         if (item.id === action.payload.id) {
           return action.payload;
         }
         return item;
       });
 
-      return {
-        ...state,
-        Books
-      };
+      return Books;
     }
 
     case BookActionTypes.UPDATE_BOOK_FAILURE: {

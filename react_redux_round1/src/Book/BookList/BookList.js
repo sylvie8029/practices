@@ -29,7 +29,7 @@ class BookList extends React.Component {
     return (
       <div>
         <div>
-          BookList
+          BookList {this.props.aaa}
           {/* <div>{this.state.newBookName}</div> */}
           <button onClick={this.onAddButtonClicked}>add</button>
           {this.state.isAdding ? (
@@ -41,16 +41,20 @@ class BookList extends React.Component {
               <button onClick={this.onSaveButtonClicked}>save</button>
             </div>
           ) : null}
+          {this.props.Books !== undefined
+            ? this.props.Books.map(b => {
+                return <Book book={b} />;
+              })
+            : null}
         </div>
-
-        <Book />
       </div>
     );
   }
 }
 
 const mapStateToProps = store => {
-  return {};
+  console.log(`store:`, store);
+  return { Books: store.Books };
 };
 const mapDispatchToProps = {
   addNewBookStart
