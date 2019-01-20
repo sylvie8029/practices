@@ -14,7 +14,9 @@ class BookList extends React.Component {
   onAddButtonClicked = () => {
     this.setState({ isAdding: true });
   };
-  onSaveButtonClicked = () => {};
+  onSaveButtonClicked = () => {
+    this.setState({ isAdding: false });
+  };
   onNewBookNameChanged = event => {
     console.log(`event.target.value:`, event.target.value);
     this.setState({ newBookName: event.target.value });
