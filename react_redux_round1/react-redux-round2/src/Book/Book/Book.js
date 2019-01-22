@@ -6,22 +6,44 @@ class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Book: props.Book
+      Book: props.Book,
+      isUpdating: false
     };
   }
   onDeleteButtonClicked = () => {
     this.props.deleteBookStart(this.props.book.id);
   };
   onUpdateButtonClicked = () => {
-    this.props.updateBookStart(this.state.book.id, { ...this.state.book });
+    this.props.updateBookStart(this.props.book.id);
+    this.setState({ isUpdating: true });
   };
-
+  onBookNameChanged = event => {
+    this.setState({ newBookName: event.target.value });
+  };
+  onOkButtonClicked = () => {
+    let newBook = { bookName: this.state.newBookName };
+    this.props.updateBookStart(newBook);
+    this.setState({ isUpdating: false });
+  };
   render() {
     return (
       <div>
         {this.props.book.bookName}
-        <button onClick={this.onDeleteButtonClicked}>delete</button>
-        <button onClick={this.onUpdateButtonClicked}>update</button>
+
+        {this.state.isUpdating ? (
+          <div>
+            <input
+              value={this.props.book.bookName}
+              onChange={this.onBookNameChanged}
+            />
+            <button onClick={this.onOkButtonClicked}>ok</button>
+          </div>
+        ) : (
+          <div>
+            <button onClick={this.onUpdateButtonClicked}>update</button>
+            <button onClick={this.onDeleteButtonClicked}>delete</button>
+          </div>
+        )}
       </div>
     );
   }
