@@ -21,7 +21,7 @@ class BookPage extends React.Component {
     this.setState({ newBookName: event.target.value });
   };
   onSaveButtonClicked = () => {
-    let newBook = { bookName: this.props.newBooknName };
+    let newBook = { bookName: this.state.newBookName };
     this.props.addNewBookStart(newBook);
     this.setState({ isAdding: false });
   };
@@ -46,7 +46,9 @@ class BookPage extends React.Component {
   }
 }
 
-const mapStateToProps = store => {};
+const mapStateToProps = store => {
+  return {};
+};
 const mapDispatchToProps = {
   getAllBooksStart,
   addNewBookStart

@@ -8,11 +8,19 @@ class Book extends React.Component {
   }
 
   render() {
-    return <div>Book Works!</div>;
+    return (
+      <div>
+        {this.props.book.bookName}
+        <button>delete</button>
+        <button>update</button>
+      </div>
+    );
   }
 }
 
-const mapStateToProps = store => {};
+const mapStateToProps = store => {
+  return {};
+};
 const mapDispatchToProps = {};
 
 export default connect(

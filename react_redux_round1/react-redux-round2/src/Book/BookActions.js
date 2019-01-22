@@ -31,6 +31,7 @@ const getAllBooksFailure = error => {
 };
 
 export function addNewBookStart(newBook) {
+  console.log(`newBook:`, newBook);
   return dispatch => {
     axios.post(`${BaseUrl}/Books`, newBook).then(
       res => {

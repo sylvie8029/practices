@@ -11,15 +11,21 @@ class BookList extends React.Component {
   render() {
     return (
       <div>
-        BookList Works!
-        <Book />
+        BookList
+        <div>
+          {this.props.Books.map((b, index) => {
+            return <Book book={b} key={index} />;
+            //map 中加入key的值，与实际值写在一起，用空格隔开即可
+          })}
+        </div>
       </div>
     );
   }
 }
 
 const mapStateToProps = store => {
-  // return newBooks:this.state.newBooks
+  console.log(`store:`, store);
+  return { Books: store.Books };
 };
 const mapDispatchToProps = {};
 
