@@ -1,18 +1,16 @@
 import * as BookActionTypes from './BookActionTypes';
 
-const initialState = [];
+const initialState = { Books: [] };
 
-export default function Book(state = initialState, action) {
+export default function BookReducer(state = initialState, action) {
   switch (action.type) {
     case BookActionTypes.GET_ALL_BOOKS_START: {
-      return {
-        ...state
-      };
+      return { ...state };
     }
 
     case BookActionTypes.GET_ALL_BOOKS_SUCCESS: {
       console.log(`action.payload:`, action.payload);
-      return action.payload;
+      return { ...state, Books: action.payload };
     }
 
     case BookActionTypes.GET_ALL_BOOKS_FAILURE: {
@@ -23,7 +21,7 @@ export default function Book(state = initialState, action) {
     }
 
     case BookActionTypes.ADD_NEW_BOOK_SUCCESS: {
-      return [...state, action.payload];
+      return { ...state, Books: [...state.Books, action.payload] };
     }
 
     case BookActionTypes.ADD_NEW_BOOK_FAILURE: {
@@ -33,9 +31,10 @@ export default function Book(state = initialState, action) {
       };
     }
     case BookActionTypes.DELETE_BOOK_SUCCESS: {
+      console.log(`action.payload:`, action.payload);
       return {
         ...state,
-        Books: [...state.Books.filter(item => item.id !== action.payload)]
+        Books: state.Books.filter(item => item.id !== action.payload)
       };
     }
 

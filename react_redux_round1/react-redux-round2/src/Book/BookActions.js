@@ -74,10 +74,10 @@ export function deleteBookStart(id) {
   };
 }
 
-const deleteBookSuccess = data => {
+const deleteBookSuccess = id => {
   return {
     type: BookActionTypes.DELETE_BOOK_SUCCESS,
-    payload: data
+    payload: id
   };
 };
 const deleteBookFailure = error => {
