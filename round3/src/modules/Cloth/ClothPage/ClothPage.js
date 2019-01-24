@@ -8,7 +8,7 @@ class ClothPage extends React.Component {
     super(props);
     this.state = {
       isAdding: false,
-      Size: '',
+      clothSize: '',
       clothName: ''
     };
   }
@@ -20,39 +20,41 @@ class ClothPage extends React.Component {
     this.setState({ isAdding: true });
   };
   onClothNameChanged = event => {
-    this.setState({ newClothName: event.target.value });
+    this.setState({ clothName: event.target.value });
   };
   onClothSizeChanged = event => {
-    this.setState({ newSize: event.target.value });
+    this.setState({ clothSize: event.target.value });
   };
   onOkButtonClicked = () => {
-    this.setState({ isAdding: false });
     let newCloth = {
-      newClothName: this.state.newClothName,
-      newSize: this.state.newSize
+      clothName: this.state.clothName,
+      clothSize: this.state.clothSize
     };
     this.props.addNewClothStart(newCloth);
+    this.setState({ isAdding: false });
   };
   render() {
     return (
       <div>
         ClothShopping
         <button onClick={this.onAddNewButtonClicked}>add new</button>
-        {this.state.isAdding ? (
-          <div>
-            Name
-            <input
-              value={this.state.ClothName}
-              onChange={this.onClothNameChanged}
-            />
-            Size
-            <input
-              value={this.state.ClothSize}
-              onChange={this.onClothSizeChanged}
-            />
-            <button onClick={this.onOkButtonClicked}>Ok</button>
-          </div>
-        ) : null}
+        <div>
+          {this.state.isAdding ? (
+            <div>
+              Name
+              <input
+                value={this.state.clothName}
+                onChange={this.onClothNameChanged}
+              />
+              Size
+              <input
+                value={this.state.clothSize}
+                onChange={this.onClothSizeChanged}
+              />
+              <button onClick={this.onOkButtonClicked}>Ok</button>
+            </div>
+          ) : null}
+        </div>
         <ClothList />
       </div>
     );

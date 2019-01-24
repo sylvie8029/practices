@@ -1,33 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class Cloth extends React.Component {
+class Shoe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Cloth: props.Cloth,
-      clothName: '',
-      clothSize: ''
+      Shoe: props.Shoe
     };
   }
 
   render() {
     return (
       <div>
-        works
-        {this.props.cloth.clothName}
-        {this.props.cloth.clothSize}
+        Shoe Works!
+        {this.props.shoe.shoeNumber}
       </div>
     );
   }
 }
 
 const mapStateToProps = store => {
-  return { Cloths: store.Cloths };
+  return {};
 };
 const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Cloth);
+)(Shoe);
