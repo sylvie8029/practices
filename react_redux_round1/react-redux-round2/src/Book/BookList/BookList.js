@@ -9,7 +9,7 @@ class BookList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ Books: newProps.Books.Boooks });
+    this.setState({ Books: newProps.Books.Books });
   }
 
   render() {

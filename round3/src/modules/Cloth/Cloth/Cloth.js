@@ -1,30 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import ClothPage from './modules/Cloth/ClothPage/ClothPage';
-class App extends React.Component {
+
+class Book extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      Cloth: props.Cloth
+    };
   }
 
   render() {
     return (
-      <Router>
-        <div>
-          <ClothPage />
-        </div>
-      </Router>
+      <div>
+        Cloth Works!
+        {this.props.clothName}
+      </div>
     );
   }
 }
 
 const mapStateToProps = store => {
-  return {};
+  return { Cloth: store.Cloths.Cloth };
 };
 const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Book);

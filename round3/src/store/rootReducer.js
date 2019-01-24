@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import  ClothPageReducer  from '../modules/Cloth/store/ClothPageReducer';
+import ClothReducer from '../modules/store/ClothReducer';
 
 const rootReducer = combineReducers({
   routerReducer,
-  ClothPages: ClothPageReducer
+  ClothPages: ClothReducer
 });
 
 export default rootReducer;

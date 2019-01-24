@@ -1,0 +1,19 @@
+{
+  "Cloths": [
+    {
+      "clothName": "dress",
+      "Size": "M",
+      "id": 1
+    },
+    {
+      "newClothName": "www",
+      "newSize": "sss",
+      "id": 2
+    },
+    {
+      "newClothName": "qqq",
+      "newSize": "wwww",
+      "id": 3
+    }
+  ]
+}
