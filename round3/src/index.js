@@ -21,7 +21,7 @@ ReactDOM.render(
 // 			document.getElementById('root')
 // 		);
 // 	});
-// 
+//
 // 	module.hot.accept('./reducers', () => {
 // 		const nextRootReducer = require('./reducers').default;
 // 		store.replaceReducer(nextRootReducer);

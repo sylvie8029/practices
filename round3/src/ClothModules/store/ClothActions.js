@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as ClothActionTypes from './ClothActionTypes';
-import { BaseUrl } from '../config/common';
+import { BaseUrl } from '../../config/common';
 
 export function getAllClothsStart(newCloth) {
   return dispatch => {

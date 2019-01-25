@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ClothPage from './modules/Cloth/ClothPage/ClothPage';
+import ClothPage from './ClothModules/Cloth/ClothPage/ClothPage';
+import ShoePage from './Shoemodules/Shoe/ShoePage/ShoePage';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class App extends React.Component {
       <Router>
         <div>
           <ClothPage />
+          <ShoePage />
         </div>
       </Router>
     );
