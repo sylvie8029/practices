@@ -1,1 +1,20 @@
-{ "Vegetables": [], "Fruits": [] }
+{
+  "Vegetables": [
+    {
+      "vegetableName": "apple",
+      "vegetableMount": "11",
+      "id": 1
+    },
+    {
+      "vegetableName": "apple",
+      "vegetableMount": "11",
+      "id": 2
+    },
+    {
+      "vegetableName": "orange",
+      "vegetableMount": "10",
+      "id": 3
+    }
+  ],
+  "Fruits": []
+}

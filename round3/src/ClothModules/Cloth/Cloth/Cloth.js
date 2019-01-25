@@ -21,9 +21,7 @@ class Cloth extends React.Component {
       clothName: this.state.clothName,
       clothSize: this.state.clothSize
     };
-    {
-      this.props.updateClothStart(this.props.cloth.id, newCloth);
-    }
+    this.props.updateClothStart(this.props.cloth.id, newCloth);
     this.setState({ isUpdating: false });
   };
   onClothNameChanged = event1 => {
