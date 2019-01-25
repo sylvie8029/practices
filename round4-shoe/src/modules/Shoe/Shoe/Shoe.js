@@ -33,7 +33,7 @@ class Shoe extends React.Component {
         {this.state.isUpdating ? (
           <div>
             <input
-              value={this.props.shoe.shoenumber}
+              value={this.state.shoeNumber}
               onChange={this.onShoeNumberChanged}
             />
             <button onClick={this.onSubmitButtonClicked}>Submit</button>

@@ -1,59 +1,19 @@
 {
   "Cloths": [
     {
-      "Name": "dress",
-      "Size": "M",
-      "id": 1
-    },
-    {
-      "Name": "www",
-      "newSize": "sss",
-      "id": 2
-    },
-    {
-      "Name": "qqq",
-      "newSize": "wwww",
-      "id": 3
-    },
-    {
-      "clothName": "1111",
+      "clothName": "333333",
       "clothSize": "m",
-      "id": 4
-    },
-    {
-      "clothName": "11111",
-      "clothSize": "M",
       "id": 5
     },
     {
-      "clothName": "11111",
-      "clothSize": "M",
+      "clothName": "1111",
+      "clothSize": "22222",
       "id": 6
     },
     {
-      "clothName": "QERE",
-      "clothSize": "REQR",
+      "clothName": "11111",
+      "clothSize": "22222",
       "id": 7
-    },
-    {
-      "clothName": "222222",
-      "clothSize": "d",
-      "id": 8
-    },
-    {
-      "clothName": "erafarger",
-      "clothSize": "q",
-      "id": 9
-    },
-    {
-      "clothName": "sadwfawe",
-      "clothSize": "afae",
-      "id": 10
-    },
-    {
-      "clothName": "dfsbghf",
-      "clothSize": "trher",
-      "id": 11
     }
   ]
 }
