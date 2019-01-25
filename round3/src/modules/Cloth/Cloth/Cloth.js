@@ -64,7 +64,7 @@ class Cloth extends React.Component {
 }
 
 const mapStateToProps = store => {
-  return { Cloths: store.Cloths };
+  return {};
 };
 const mapDispatchToProps = {
   deleteClothStart,
